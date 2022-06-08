@@ -43,17 +43,18 @@ const BK_WC_PLUGIN_FILE = __FILE__;
  * Start at version 4.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'WC_BUCKAROO_BPE_GATEWAY_VERSION', '4.0.0' );
+define('WC_BUCKAROO_BPE_GATEWAY_VERSION', '4.0.0');
 
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
+if (!defined('WPINC')) {
+    die();
 }
 
 function autoload()
 {
     $autoloader = __DIR__ . '/vendor/autoload.php';
-    $buckarooSdkAutoload = plugin_dir_path(BK_WC_PLUGIN_FILE) . 'vendor/autoload.php';
+    $buckarooSdkAutoload =
+        plugin_dir_path(BK_WC_PLUGIN_FILE) . 'vendor/autoload.php';
 
     if (file_exists($autoloader)) {
         /** @noinspection PhpIncludeInspection */
@@ -80,9 +81,7 @@ function initialize()
     $properties = PluginProperties::new(__FILE__);
     $bootstrap = Package::new($properties);
 
-    $modules = [
-        new Buckaroo(__FILE__)
-    ];
+    $modules = [new Buckaroo(__FILE__)];
 
     $modules = apply_filters('buckaroo_wc_plugin_modules', $modules);
 
@@ -97,10 +96,11 @@ function initialize()
         'data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIGJhc2VQcm9maWxlPSJ0aW55LXBzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNTAgMTUwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCI+Cgk8dGl0bGU+bG9nby1zdmc8L3RpdGxlPgoJPHN0eWxlPgoJCXRzcGFuIHsgd2hpdGUtc3BhY2U6cHJlIH0KCQkuczAgeyBmaWxsOiAjY2RkOTA1IH0gCgk8L3N0eWxlPgoJPHBhdGggaWQ9IkxheWVyIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsYXNzPSJzMCIgZD0ibS0wLjA1IDAuODVoMjEuNGwxOS40NyA0My4wMWg2Mi4wOGwxOC40LTQzLjAxaDIxLjRsLTYyLjcxIDE0Ni44MmgtMTQuNzhsLTY1LjI4LTE0Ni44MnptOTQuODEgNjEuODVoLTQ1LjM3bDIzLjU0IDUyLjg3bDIxLjgzLTUyLjg3eiIgLz4KPC9zdmc+',
         '55.3'
     );
-
 }
 
 add_action('plugins_loaded', __NAMESPACE__ . '\\initialize');
 
-
-register_activation_hook(__FILE__, [ 'Buckaroo\WooCommerce\Config\Setup', 'activate' ]);
+register_activation_hook(__FILE__, [
+    'Buckaroo\WooCommerce\Config\Setup',
+    'activate',
+]);
