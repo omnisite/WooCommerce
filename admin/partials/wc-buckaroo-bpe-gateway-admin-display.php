@@ -1,7 +1,7 @@
 <?php
-
+namespace admin\partials;
 /**
- * Provide a admin area view for the plugin
+ * Provide an admin area view for the plugin
  *
  * @link       https://www.buckaroo.nl
  *

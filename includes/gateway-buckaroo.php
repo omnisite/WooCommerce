@@ -1,6 +1,9 @@
 <?php
+namespace includes;
 //require_once(dirname(__FILE__) . '/library/api/idin.php');
 //require_once(dirname(__FILE__) . '/library/class-wc-session-handler-buckaroo.php');
+use WC_Payment_Gateway;
+
 /**
  * @package Buckaroo
  */

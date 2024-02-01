@@ -1,4 +1,7 @@
 <?php
+
+namespace migration;
+
 require_once dirname(__FILE__). "/Buckaroo_Migration.php";
 require_once dirname(__FILE__). "/Buckaroo_Migration_Exception.php";
 /**

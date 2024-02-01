@@ -1,4 +1,15 @@
 <?php
+
+namespace Buckaroo\Subscriptions;
+
+use Buckaroo_Logger;
+use BuckarooPaymentMethod;
+use Buckaroo\Client\Client;
+use Exception;
+use Buckaroo\Handlers\PaymentHandler;
+use Buckaroo\Transaction\Response\TransactionResponse;
+use WC_Order;
+
 /**
  * Plugin Name:       Buckaroo WooCommerce Subscriptions
  * Plugin URI:        https://www.buckaroo.nl
@@ -11,16 +22,6 @@
  *
  * @package Buckaroo
  */
-
-namespace Subscriptions;
-
-use Buckaroo_Logger;
-use BuckarooPaymentMethod;
-use Client\Client;
-use Exception;
-use Handlers\PaymentHandler;
-use Buckaroo\Transaction\Response\TransactionResponse;
-use WC_Order;
 
 /**
  * Class Subscriptions

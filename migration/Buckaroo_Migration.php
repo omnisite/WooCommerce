@@ -1,4 +1,7 @@
 <?php
+
+namespace migration;
+
 /**
  * Interface to extenda version migration
  * php version 7.2

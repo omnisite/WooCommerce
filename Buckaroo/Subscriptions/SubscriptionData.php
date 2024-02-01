@@ -1,6 +1,6 @@
 <?php
 
-namespace Subscriptions;
+namespace Buckaroo\Subscriptions;
 
 use WC_Order;
 use WC_Subscription;

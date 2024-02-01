@@ -1,6 +1,9 @@
 <?php
+namespace admin;
 
+require_once dirname(__FILE__) . '/../includes/gateway-buckaroo.php';
 
+use includes\WC_Gateway_Buckaroo;
 
 /**
  * @package Buckaroo

@@ -1,6 +1,6 @@
 <?php
 
-namespace Models;
+namespace Buckaroo\Models;
 
 use Buckaroo\PaymentMethods\Subscriptions\Models\RatePlanCharge as RatePlanChargeBuckaroo;
 

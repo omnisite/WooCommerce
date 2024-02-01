@@ -1,5 +1,5 @@
 <?php
-
+namespace includes;
 /**
  * Fired during plugin deactivation.
  *

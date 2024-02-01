@@ -5,7 +5,7 @@
  * @package BuckarooPaymentGatewayForWooCommerce
  */
 
-namespace Handlers;
+namespace Buckaroo\Handlers;
 
 use Buckaroo\Handlers\Reply\ReplyHandler;
 use Buckaroo\PaymentMethods\Bancontact\Bancontact;

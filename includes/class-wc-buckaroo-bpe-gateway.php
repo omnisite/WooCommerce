@@ -1,5 +1,10 @@
 <?php
 
+namespace includes;
+
+use admin\Wc_Buckaroo_Bpe_Gateway_Admin;
+use public\Wc_Buckaroo_Bpe_Gateway_Public;
+
 /**
  * The core plugin class.
  *
@@ -151,7 +156,7 @@ class Wc_Buckaroo_Bpe_Gateway {
 	}
 
 	/**
-	 * Register all of the hooks related to the public-facing functionality
+	 * Register all the hooks related to the public-facing functionality
 	 * of the plugin.
 	 *
 	 * @since    1.0.0

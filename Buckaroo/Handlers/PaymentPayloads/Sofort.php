@@ -1,4 +1,8 @@
 <?php
+
+namespace Buckaroo\Handlers\PaymentPayloads;
+
+use Buckaroo\Handlers\PaymentHandler;
 /**
  * Plugin Name:       Buckaroo WooCommerce Subscriptions
  * Plugin URI:        https://www.buckaroo.nl
@@ -11,10 +15,6 @@
  *
  * @package Buckaroo
  */
-
-namespace PaymentPayloads;
-
-use Handlers\PaymentHandler;
 
 class Sofort extends PaymentHandler {
 

@@ -1,5 +1,6 @@
 <?php
 
+namespace includes;
 /**
  * Define the internationalization functionality.
  *

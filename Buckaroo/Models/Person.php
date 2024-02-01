@@ -1,10 +1,8 @@
 <?php
 
-namespace Models;
+namespace Buckaroo\Models;
 
-use Buckaroo\Models\Person as PersonBuckaroo;
-
-class Person extends PersonBuckaroo {
+class Person {
 	/**
 	 * @param string $firstName
 	 */

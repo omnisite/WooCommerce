@@ -1,6 +1,6 @@
 <?php
 
-namespace Handlers;
+namespace Buckaroo\Handlers;
 
 use Buckaroo\Transaction\Response\TransactionResponse;
 

@@ -1,5 +1,6 @@
 <?php
 
+namespace includes;
 /**
  * Fired during plugin activation.
  *

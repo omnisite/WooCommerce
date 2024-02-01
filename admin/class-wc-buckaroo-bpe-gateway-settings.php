@@ -1,4 +1,9 @@
 <?php
+namespace admin;
+
+require_once dirname(__FILE__) . '/../../woocommerce/includes/admin/settings/class-wc-settings-page.php';
+
+use WC_Settings_Page;
 
 /**
  * The admin-specific functionality of the plugin.

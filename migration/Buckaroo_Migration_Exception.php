@@ -1,4 +1,7 @@
 <?php
+
+namespace migration;
+
 /**
  * Migration exception
  * php version 7.2

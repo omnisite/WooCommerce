@@ -1,6 +1,6 @@
 <?php
 
-namespace Client;
+namespace Buckaroo\Client;
 
 use Buckaroo\BuckarooClient;
 use BuckarooPaymentMethod;

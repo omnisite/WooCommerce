@@ -1,11 +1,11 @@
 <?php
 
-namespace Models;
+namespace Buckaroo\Models;
 
 /**
  * Class Address
  */
-class Address extends \Buckaroo\Models\Address {
+class Address {
 	/**
 	 * Set Street.
 	 *

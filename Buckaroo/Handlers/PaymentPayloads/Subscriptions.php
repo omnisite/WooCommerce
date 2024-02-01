@@ -1,4 +1,16 @@
 <?php
+
+namespace Buckaroo\Handlers\PaymentPayloads;
+
+use Handlers\PaymentHandler;
+use Exception;
+use Models\Address;
+use Models\Person;
+use Models\RatePlan;
+use Models\RatePlanCharge;
+use Models\Subscription;
+use WC_Tax;
+
 /**
  * Plugin Name:       Buckaroo WooCommerce Subscriptions
  * Plugin URI:        https://www.buckaroo.nl
@@ -11,17 +23,6 @@
  *
  * @package Buckaroo
  */
-
-namespace PaymentPayloads;
-
-use Exception;
-use Handlers\PaymentHandler;
-use Models\Address;
-use Models\Person;
-use Models\RatePlan;
-use Models\RatePlanCharge;
-use Models\Subscription;
-use WC_Tax;
 
 class Subscriptions extends PaymentHandler {
 

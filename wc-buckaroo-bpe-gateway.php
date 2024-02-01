@@ -19,6 +19,10 @@
 declare( strict_types = 1 );
 
 // If this file is called directly, abort.
+use includes\Wc_Buckaroo_Bpe_Gateway;
+use includes\Wc_Buckaroo_Bpe_Gateway_Activator;
+use includes\Wc_Buckaroo_Bpe_Gateway_Deactivator;
+
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }

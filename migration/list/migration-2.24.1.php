@@ -1,5 +1,10 @@
 <?php
 
+namespace migration\list;
+
+use includes\WC_Gateway_Buckaroo;
+use migration\Buckaroo_Migration;
+
 /**
  * Migration for version 2.24.1
  * php version 7.2
