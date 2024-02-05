@@ -1,5 +1,6 @@
 <?php
-namespace admin;
+
+namespace Buckaroo\WooCommerce\admin;
 /**
  * The admin-specific functionality of the plugin.
  *

@@ -1,9 +1,11 @@
 <?php
-namespace admin;
+
+namespace Buckaroo\WooCommerce\admin;
+
+use WC_Settings_Page;
 
 require_once dirname(__FILE__) . '/../../woocommerce/includes/admin/settings/class-wc-settings-page.php';
 
-use WC_Settings_Page;
 
 /**
  * The admin-specific functionality of the plugin.
@@ -33,6 +35,7 @@ if ( ! class_exists( 'Wc_Buckaroo_Bpe_Gateway_Settings' ) ) {
 
 			$this->id    = 'buckaroo_settings';
 			$this->label = __('Buckaroo Settings', 'wc-buckaroo-bpe-gateway');
+			parent::__construct();
 
 			// Define all hooks instead of inheriting from parent
 			add_filter( 'woocommerce_settings_tabs_array', array( $this, 'add_settings_page' ), 20 );
@@ -81,7 +84,7 @@ if ( ! class_exists( 'Wc_Buckaroo_Bpe_Gateway_Settings' ) ) {
 
 
 			if ($current_section === 'report') {
-				(new Buckaroo_Report_Page())->output_report();
+//				(new Buckaroo_Report_Page())->output_report();
 				$hide_save_button = true;
 			}
 			if ($current_section === 'methods') {
@@ -89,9 +92,9 @@ if ( ! class_exists( 'Wc_Buckaroo_Bpe_Gateway_Settings' ) ) {
 				$hide_save_button = true;
 			}
 			if ($current_section === 'logs' && isset($_GET['log_file'])) {
-				(new Buckaroo_Report_Page())->display_log_file(
-					sanitize_text_field($_GET['log_file'])
-				);
+//				(new Buckaroo_Report_Page())->display_log_file(
+//					sanitize_text_field($_GET['log_file'])
+//				);
 				$hide_save_button = true;
 			}
 		}

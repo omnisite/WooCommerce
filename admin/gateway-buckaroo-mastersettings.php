@@ -1,9 +1,9 @@
 <?php
-namespace admin;
+namespace Buckaroo\WooCommerce\admin;
 
 require_once dirname(__FILE__) . '/../includes/gateway-buckaroo.php';
+use Buckaroo\WooCommerce\includes\WC_Gateway_Buckaroo;
 
-use includes\WC_Gateway_Buckaroo;
 
 /**
  * @package Buckaroo
@@ -18,6 +18,8 @@ class WC_Gateway_Buckaroo_MasterSettings extends WC_Gateway_Buckaroo
         $this->method_title = __(
             'Buckaroo Master Settings', 'wc-buckaroo-bpe-gateway'
         );
+	    parent::__construct();
+
     }
   
     public function enqueue_script_exodus($settings)
@@ -88,14 +90,14 @@ class WC_Gateway_Buckaroo_MasterSettings extends WC_Gateway_Buckaroo
             ],
             'default'     => '');
 
-        $taxes                       = $this->getTaxClasses();
-        $this->form_fields['feetax'] = [
-            'title'       => __('Select tax class for fee', 'wc-buckaroo-bpe-gateway'),
-            'type'        => 'select',
-            'options'     => $taxes,
-            'description' => __('Fee tax class', 'wc-buckaroo-bpe-gateway'),
-            'default'     => '',
-        ];
+//        $taxes                       = $this->getTaxClasses();
+//        $this->form_fields['feetax'] = [
+//            'title'       => __('Select tax class for fee', 'wc-buckaroo-bpe-gateway'),
+//            'type'        => 'select',
+//            'options'     => $taxes,
+//            'description' => __('Fee tax class', 'wc-buckaroo-bpe-gateway'),
+//            'default'     => '',
+//        ];
         $this->form_fields['paymentfeevat'] = [
             'title'       => __('Payment fee display', 'wc-buckaroo-bpe-gateway'),
             'type'        => 'select',
@@ -115,18 +117,18 @@ class WC_Gateway_Buckaroo_MasterSettings extends WC_Gateway_Buckaroo
             'description' => __('Toggle debug mode on/off', 'wc-buckaroo-bpe-gateway'),
             'options'     => array('on' => 'On', 'off' => 'Off'),
             'default'     => 'off');
-    
-        $this->form_fields['logstorage'] = array(
-            'title'       => __('Debug data storage', 'wc-buckaroo-bpe-gateway'),
-            'type'        => 'select',
-            'description' => __('Select where to store debug data', 'wc-buckaroo-bpe-gateway'),
-            'options'     => array(
-                Buckaroo_Logger_Storage::STORAGE_ALL => __('Both'),
-                Buckaroo_Logger_Storage::STORAGE_FILE => __('File'),
-                Buckaroo_Logger_Storage::STORAGE_DB => __('Database'),
-            ),
-            'default'     => Buckaroo_Logger_Storage::STORAGE_ALL);
 
+//        $this->form_fields['logstorage'] = array(
+//            'title'       => __('Debug data storage', 'wc-buckaroo-bpe-gateway'),
+//            'type'        => 'select',
+//            'description' => __('Select where to store debug data', 'wc-buckaroo-bpe-gateway'),
+//            'options'     => array(
+//                Buckaroo_Logger_Storage::STORAGE_ALL => __('Both'),
+//                Buckaroo_Logger_Storage::STORAGE_FILE => __('File'),
+//                Buckaroo_Logger_Storage::STORAGE_DB => __('Database'),
+//            ),
+//            'default'     => Buckaroo_Logger_Storage::STORAGE_ALL);
+//
 
         $this->form_fields['transactiondescription'] = array(
             'title'             => __('Transaction description', 'wc-buckaroo-bpe-gateway'),

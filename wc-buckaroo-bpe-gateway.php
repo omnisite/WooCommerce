@@ -1,4 +1,10 @@
 <?php
+declare( strict_types = 1 );
+namespace Buckaroo\WooCommerce;
+
+use Buckaroo\WooCommerce\includes\Wc_Buckaroo_Bpe_Gateway;
+use Buckaroo\WooCommerce\includes\Wc_Buckaroo_Bpe_Gateway_Activator;
+use Buckaroo\WooCommerce\includes\Wc_Buckaroo_Bpe_Gateway_Deactivator;
 
 /**
  * WC Buckaroo BPE Gateway
@@ -15,13 +21,6 @@
  * Text Domain:     wc-buckaroo-bpe-gateway
  * Namespace:       Buckaroo\WooCommerce
  */
-
-declare( strict_types = 1 );
-
-// If this file is called directly, abort.
-use includes\Wc_Buckaroo_Bpe_Gateway;
-use includes\Wc_Buckaroo_Bpe_Gateway_Activator;
-use includes\Wc_Buckaroo_Bpe_Gateway_Deactivator;
 
 if ( ! defined( 'WPINC' ) ) {
 	die;
@@ -114,4 +113,40 @@ function run_wc_buckaroo_bpe_gateway() {
 		$plugin->run();
 	}
 }
+
+function buckaroo_page_menu(): void {
+	add_menu_page(
+		'Buckaroo',
+		'Buckaroo',
+		'read',
+		'admin.php?page=wc-settings&tab=buckaroo_settings',
+		'',
+		'data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIGJhc2VQcm9maWxlPSJ0aW55LXBzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNTAgMTUwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCI+Cgk8dGl0bGU+bG9nby1zdmc8L3RpdGxlPgoJPHN0eWxlPgoJCXRzcGFuIHsgd2hpdGUtc3BhY2U6cHJlIH0KCQkuczAgeyBmaWxsOiAjY2RkOTA1IH0gCgk8L3N0eWxlPgoJPHBhdGggaWQ9IkxheWVyIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsYXNzPSJzMCIgZD0ibS0wLjA1IDAuODVoMjEuNGwxOS40NyA0My4wMWg2Mi4wOGwxOC40LTQzLjAxaDIxLjRsLTYyLjcxIDE0Ni44MmgtMTQuNzhsLTY1LjI4LTE0Ni44MnptOTQuODEgNjEuODVoLTQ1LjM3bDIzLjU0IDUyLjg3bDIxLjgzLTUyLjg3eiIgLz4KPC9zdmc+',
+		'55.3'
+	);
+	add_submenu_page(
+		'admin.php?page=wc-settings&tab=buckaroo_settings',
+		esc_html__('Settings',  'wc-buckaroo-bpe-gateway'),
+		esc_html__('Settings',  'wc-buckaroo-bpe-gateway'),
+		'manage_options',
+		'admin.php?page=wc-settings&tab=buckaroo_settings'
+	);
+	add_submenu_page(
+		'admin.php?page=wc-settings&tab=buckaroo_settings',
+		esc_html__('Payment methods',  'wc-buckaroo-bpe-gateway'),
+		esc_html__('Payment methods',  'wc-buckaroo-bpe-gateway'),
+		'manage_options',
+		'admin.php?page=wc-settings&tab=buckaroo_settings&section=methods'
+	);
+	add_submenu_page(
+		'admin.php?page=wc-settings&tab=buckaroo_settings',
+		esc_html__('Report',  'wc-buckaroo-bpe-gateway'),
+		esc_html__('Report',  'wc-buckaroo-bpe-gateway'),
+		'manage_options',
+		'admin.php?page=wc-settings&tab=buckaroo_settings&section=report'
+	);
+}
+
+add_action('admin_menu', 'Buckaroo\WooCommerce\buckaroo_page_menu');
+
 run_wc_buckaroo_bpe_gateway();

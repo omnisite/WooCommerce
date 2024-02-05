@@ -1,6 +1,6 @@
 <?php
 
-namespace public;
+namespace Buckaroo\WooCommerce\public;
 
 /**
  * The public-facing functionality of the plugin.

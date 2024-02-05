@@ -1,6 +1,6 @@
 <?php
 
-namespace includes;
+namespace Buckaroo\WooCommerce\includes;
 /**
  * Define the internationalization functionality.
  *

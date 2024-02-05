@@ -1,5 +1,5 @@
 <?php
-namespace includes;
+namespace Buckaroo\WooCommerce\includes;
 /**
  * Fired during plugin deactivation.
  *

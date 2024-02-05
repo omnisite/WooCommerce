@@ -1,5 +1,5 @@
 <?php
-namespace public\partials;
+namespace Buckaroo\WooCommerce\public\partials;
 
 /**
  * Provide a public-facing view for the plugin

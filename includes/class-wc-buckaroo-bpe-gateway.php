@@ -1,9 +1,9 @@
 <?php
 
-namespace includes;
+namespace Buckaroo\WooCommerce\includes;
 
-use admin\Wc_Buckaroo_Bpe_Gateway_Admin;
-use public\Wc_Buckaroo_Bpe_Gateway_Public;
+use Buckaroo\WooCommerce\admin\Wc_Buckaroo_Bpe_Gateway_Admin;
+use Buckaroo\WooCommerce\public\Wc_Buckaroo_Bpe_Gateway_Public;
 
 /**
  * The core plugin class.
@@ -117,7 +117,6 @@ class Wc_Buckaroo_Bpe_Gateway {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wc-buckaroo-bpe-gateway-public.php';
 
 		$this->loader = new Wc_Buckaroo_Bpe_Gateway_Loader();
-
 	}
 
 	/**

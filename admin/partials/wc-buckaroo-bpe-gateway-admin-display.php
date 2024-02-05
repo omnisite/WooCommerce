@@ -1,5 +1,5 @@
 <?php
-namespace admin\partials;
+namespace Buckaroo\WooCommerce\admin\partials;
 /**
  * Provide an admin area view for the plugin
  *

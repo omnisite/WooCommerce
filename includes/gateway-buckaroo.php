@@ -1,5 +1,5 @@
 <?php
-namespace includes;
+namespace Buckaroo\WooCommerce\includes;
 //require_once(dirname(__FILE__) . '/library/api/idin.php');
 //require_once(dirname(__FILE__) . '/library/class-wc-session-handler-buckaroo.php');
 use WC_Payment_Gateway;
@@ -25,10 +25,10 @@ class WC_Gateway_Buckaroo extends WC_Payment_Gateway
 
     public function __construct()
     {
-        if ((!is_admin() && !checkCurrencySupported($this->id)) || (defined('DOING_AJAX') && !checkCurrencySupported($this->id))) {
-            unset($this->id);
-            unset($this->title);
-        }
+//        if ((!is_admin() && !checkCurrencySupported($this->id)) || (defined('DOING_AJAX') && !checkCurrencySupported($this->id))) {
+//            unset($this->id);
+//            unset($this->title);
+//        }
         // Load the form fields
         $this->init_form_fields();
         // Load the settings.

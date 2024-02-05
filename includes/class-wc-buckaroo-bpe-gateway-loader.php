@@ -1,6 +1,6 @@
 <?php
 
-namespace includes;
+namespace Buckaroo\WooCommerce\includes;
 /**
  * Register all actions and filters for the plugin
  *
