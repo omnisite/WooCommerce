@@ -25,7 +25,6 @@ use Buckaroo\WooCommerce\includes\Wc_Buckaroo_Bpe_Gateway_Deactivator;
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
-//	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/gateway-buckaroo.php';
 
 /**
  * Currently plugin version.
@@ -36,10 +35,7 @@ if ( ! function_exists( 'is_plugin_active' ) ) {
 	include_once ABSPATH . '/wp-admin/includes/plugin.php';
 }
 
-// Include Composer's autoload file if it exists
-if (file_exists(plugin_dir_path(__FILE__) . 'vendor/autoload.php')) {
-	require_once plugin_dir_path(__FILE__) . 'vendor/autoload.php';
-}
+require_once dirname(__FILE__) . '/vendor/autoload.php';
 
 /**
  * Check for the existence of WooCommerce, Buckaroo WooCommerce, WooCommerce Subscriptions

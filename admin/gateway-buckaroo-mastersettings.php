@@ -3,6 +3,7 @@ namespace Buckaroo\WooCommerce\admin;
 
 require_once dirname(__FILE__) . '/../includes/gateway-buckaroo.php';
 use Buckaroo\WooCommerce\includes\WC_Gateway_Buckaroo;
+use WC_Tax;
 
 
 /**
@@ -49,7 +50,6 @@ class WC_Gateway_Buckaroo_MasterSettings extends WC_Gateway_Buckaroo
                 'default'     => '');
         }
 
-        //Start Certificate fields
         $this->form_fields['merchantkey'] = array(
             'title'             => __('Website key', 'wc-buckaroo-bpe-gateway'),
             'type'              => 'password',
@@ -68,19 +68,7 @@ class WC_Gateway_Buckaroo_MasterSettings extends WC_Gateway_Buckaroo
                 'required' => 'required',
             ),
         );
-        $this->form_fields['thumbprint'] = array(
-            'title'       => __('Fingerprint', 'wc-buckaroo-bpe-gateway'),
-            'type'        => 'text',
-            'description' => __('Certificate thumbprint (Configuration -> Security -> Certificates -> See "Fingerprint" after a certificate has been generated).', 'wc-buckaroo-bpe-gateway'),
-            'default'     => '');
-        $this->form_fields['upload'] = array(
-            'title'       => __('Upload certificate', 'wc-buckaroo-bpe-gateway'),
-            'type'        => 'button',
-            'description' => __('Click to select and upload your certificate. Note: Please save after uploading.', 'wc-buckaroo-bpe-gateway'),
-            'default'     => '');
 
-        $this->initCerificateFields();
-        
         $this->form_fields['test_credentials'] = array(
             'title'       => __('Test credentials', 'wc-buckaroo-bpe-gateway'),
             'type'        => 'button',
@@ -90,14 +78,13 @@ class WC_Gateway_Buckaroo_MasterSettings extends WC_Gateway_Buckaroo
             ],
             'default'     => '');
 
-//        $taxes                       = $this->getTaxClasses();
-//        $this->form_fields['feetax'] = [
-//            'title'       => __('Select tax class for fee', 'wc-buckaroo-bpe-gateway'),
-//            'type'        => 'select',
-//            'options'     => $taxes,
-//            'description' => __('Fee tax class', 'wc-buckaroo-bpe-gateway'),
-//            'default'     => '',
-//        ];
+        $this->form_fields['feetax'] = [
+            'title'       => __('Select tax class for fee', 'wc-buckaroo-bpe-gateway'),
+            'type'        => 'select',
+            'options'     => $this->getTaxClasses(),
+            'description' => __('Fee tax class', 'wc-buckaroo-bpe-gateway'),
+            'default'     => '',
+        ];
         $this->form_fields['paymentfeevat'] = [
             'title'       => __('Payment fee display', 'wc-buckaroo-bpe-gateway'),
             'type'        => 'select',
